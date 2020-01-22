@@ -7,6 +7,9 @@ from .models import Account
 from .main import InstaBot
 from selenium import webdriver
 from time import sleep
+from webdriver_manager.chrome import ChromeDriverManager
+
+
 
 class HomePageView(CreateView):
 	model = Account
@@ -16,6 +19,7 @@ class HomePageView(CreateView):
 		if request.method == 'POST':
 			name=request.POST['user_name']
 			pasw=request.POST['password']
+			driver = webdriver.Chrome(ChromeDriverManager().install())
 			global names
 			names = InstaBot(str(name),str(pasw)).get_unfollowers()
 	def index(request):
