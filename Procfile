@@ -1,0 +1,1 @@
+web: gunicorn django_instabot.wsgi --log-file -
