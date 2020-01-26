@@ -10,6 +10,6 @@ from django.urls import reverse
 class Account(models.Model):
 	user_name = models.CharField(max_length=50)
 	password = models.CharField(max_length=50)
-	email = models.CharField(max_length=50, default='rishabjmu@gmail.com')
+	email = models.CharField(max_length=50, default='xyz@gmail.com')
 
 
