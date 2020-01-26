@@ -19,7 +19,10 @@ class HomePageView(CreateView):
 		if request.method == 'POST':
 			name=request.POST['user_name']
 			pasw=request.POST['password']
+<<<<<<< HEAD
 			ema=request.POST['email']
+=======
+>>>>>>> a6b266ce5c21f32ee6e2259812e8929c9d15dd50
 			driver = webdriver.Chrome(ChromeDriverManager().install())
 			global names
 			names = InstaBot(str(name),str(pasw), str(ema)).get_unfollowers()
