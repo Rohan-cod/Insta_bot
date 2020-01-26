@@ -14,14 +14,15 @@ from webdriver_manager.chrome import ChromeDriverManager
 class HomePageView(CreateView):
 	model = Account
 	template_name = 'home.html'
-	fields = {'user_name', 'password'}
+	fields = {'user_name', 'password', 'email'}
 	def submit(request):
 		if request.method == 'POST':
 			name=request.POST['user_name']
 			pasw=request.POST['password']
+			ema=request.POST['email']
 			driver = webdriver.Chrome(ChromeDriverManager().install())
 			global names
-			names = InstaBot(str(name),str(pasw)).get_unfollowers()
+			names = InstaBot(str(name),str(pasw), str(ema)).get_unfollowers()
 	def index(request):
 
 		context={nam:names}

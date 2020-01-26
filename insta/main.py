@@ -3,17 +3,19 @@ from time import sleep
 
 
 class InstaBot:
-    def __init__(self, username, pas):
+    def __init__(self, username, pas,email):
         self.driver = webdriver.Chrome()
         self.username = username
         self.driver.get("https://instagram.com")
         sleep(2)
-        self.driver.find_element_by_xpath("//a[contains(text(), 'Log in')]")\
+        self.driver.find_element_by_xpath('//button[@type="button"]')\
             .click()
+        #self.driver.find_element_by_xpath("//a[contains(text(), 'Log in')]")\
+         #   .click()
         sleep(2)
-        self.driver.find_element_by_xpath("//input[@name=\"username\"]")\
-            .send_keys(username)
-        self.driver.find_element_by_xpath("//input[@name=\"password\"]")\
+        self.driver.find_element_by_xpath("//input[@name=\"email\"]")\
+            .send_keys(email)
+        self.driver.find_element_by_xpath("//input[@name=\"pass\"]")\
             .send_keys(pas)
         self.driver.find_element_by_xpath('//button[@type="submit"]')\
             .click()
@@ -37,8 +39,8 @@ class InstaBot:
 
     def _get_names(self):
         sleep(2)
-        sugs = self.driver.find_element_by_xpath('//h4[contains(text(), Suggestions)]')
-        self.driver.execute_script('arguments[0].scrollIntoView()', sugs)
+        #sugs = self.driver.find_element_by_xpath('//h4[contains(text(), Suggestions)]')
+        #self.driver.execute_script('arguments[0].scrollIntoView()', sugs)
         sleep(2)
         scroll_box = self.driver.find_element_by_xpath("/html/body/div[3]/div/div[2]")
         last_ht, ht = 0, 1
