@@ -21,7 +21,6 @@ ChromeDriver
   * Make migrations `$ python manage.py makemigrations`
   * Migrate the changes to the database `$ python manage.py migrate`
   * Create superuser `$ python manage.py createsuperuser`
-  * Install ChromeDriver `$ brew cask install chromedriver`
   * Run the server `$ python manage.py runserver`
 
 ## Contributing
