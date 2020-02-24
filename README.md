@@ -2,11 +2,11 @@
 A bot made using python to get the list of people whom you follow but they haven't followed you back.😉
 
 ## Requirements
-Python 3.7
-Django 2.2.8
-selenium
-gunicorn
-ChromeDriver
+  * Python 3.7
+  * Django 2.2.8
+  * selenium
+  * gunicorn
+  * ChromeDriver
 
 ## Setting up the Project
 
